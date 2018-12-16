@@ -54,9 +54,9 @@ describe("Gilded Rose", function() {
 
   it("should increase Backstage passes", function () {
     items = [
-      new Item("Backstage passes to a Pink Floyd concert", 12, 40),
-      new Item("Backstage passes to a Pink Floyd concert", 7, 40),
-      new Item("Backstage passes to a Pink Floyd concert", 2, 40),
+      new Item("Backstage passes to a TAFKAL80ETC concert", 12, 40),
+      new Item("Backstage passes to a TAFKAL80ETC concert", 7, 40),
+      new Item("Backstage passes to a TAFKAL80ETC concert", 2, 40),
     ];
     update_quality();
     update_quality();
@@ -75,7 +75,7 @@ describe("Gilded Rose", function() {
     expect(items[2].quality).toEqual(0);
     update_quality();
     // +2 for <=10 days
-    expect(items[0].quality).toEqual(47);
+    expect(items[0].quality).toEqual(46);
     // +3 for <=5 days
     expect(items[1].quality).toEqual(50);
     // 0 for <0 days
