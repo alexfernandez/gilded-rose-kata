@@ -4,49 +4,49 @@ function Item(name, sell_in, quality) {
   this.quality = quality;
 }
 
-function update_quality(items) {
-  for (var i = 0; i < items.length; i++) {
-    update_item(items[i])
-  }
-}
-
-function update_item(item) {
-  if (item.name == 'Sulfuras, Hand of Ragnaros') {
-    item.quality = 80
+Item.prototype.update = function() {
+  if (this.name == 'Sulfuras, Hand of Ragnaros') {
+    this.quality = 80
     return;
   }
-  item.sell_in = item.sell_in - 1;
-  if (item.name == 'Aged Brie') {
-    item.quality += 1
-  } else if (item.name.startsWith('Backstage passes')) {
-    if (item.sell_in >= 10) {
-      item.quality += 1
-    } else if (item.sell_in >= 5) {
-      item.quality += 2
-    } else if (item.sell_in >= 0) {
-      item.quality += 3
+  this.sell_in = this.sell_in - 1;
+  if (this.name == 'Aged Brie') {
+    this.quality += 1
+  } else if (this.name.startsWith('Backstage passes')) {
+    if (this.sell_in >= 10) {
+      this.quality += 1
+    } else if (this.sell_in >= 5) {
+      this.quality += 2
+    } else if (this.sell_in >= 0) {
+      this.quality += 3
     } else {
-      item.quality = 0
+      this.quality = 0
     }
-  } else if (item.name.startsWith('Conjured')) {
-    if (item.sell_in >= 0) {
-      item.quality -= 2
+  } else if (this.name.startsWith('Conjured')) {
+    if (this.sell_in >= 0) {
+      this.quality -= 2
     } else {
-      item.quality -= 4
+      this.quality -= 4
     }
   } else {
-    // regular item
-    if (item.sell_in >= 0) {
-      item.quality -= 1
+    // regular this
+    if (this.sell_in >= 0) {
+      this.quality -= 1
     } else {
-      item.quality -= 2
+      this.quality -= 2
     }
   }
   // boundary checks
-  if (item.quality > 50) {
-    item.quality = 50
-  } else if (item.quality < 0) {
-    item.quality = 0
+  if (this.quality > 50) {
+    this.quality = 50
+  } else if (this.quality < 0) {
+    this.quality = 0
+  }
+}
+
+function update_quality(items) {
+  for (var i = 0; i < items.length; i++) {
+    items[i].update()
   }
 }
 
