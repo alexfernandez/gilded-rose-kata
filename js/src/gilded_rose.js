@@ -20,26 +20,26 @@ function update_item(item) {
   if (item.name == 'Aged Brie') {
     item.quality += 1
   } else if (item.name.startsWith('Backstage passes')) {
-    if (item.sell_in < 0) {
-      item.quality = 0
-    } else if (item.sell_in < 5) {
-      item.quality += 3
-    } else if (item.sell_in < 10) {
-      item.quality += 2
-    } else {
+    if (item.sell_in >= 10) {
       item.quality += 1
+    } else if (item.sell_in >= 5) {
+      item.quality += 2
+    } else if (item.sell_in >= 0) {
+      item.quality += 3
+    } else {
+      item.quality = 0
     }
   } else if (item.name.startsWith('Conjured')) {
-    if (item.sell_in < 0) {
-      item.quality -= 4
-    } else {
+    if (item.sell_in >= 0) {
       item.quality -= 2
+    } else {
+      item.quality -= 4
     }
   } else {
-    if (item.sell_in < 0) {
-      item.quality -= 2
-    } else {
+    if (item.sell_in >= 0) {
       item.quality -= 1
+    } else {
+      item.quality -= 2
     }
   }
   if (item.quality > 50) {
