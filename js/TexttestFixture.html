@@ -12,6 +12,8 @@
 
     $('body').append('<p>OMGHAI!</p>');
 
+    const items = [];
+
     items.push(new Item('+5 Dexterity Vest', 10, 20));
     items.push(new Item('Aged Brie', 2, 0));
     items.push(new Item('Elixir of the Mongoose', 5, 7));
@@ -27,15 +29,15 @@
 
     for (var i = 0; i < days; i++) {
       showHeaderFor(i);
-      showItemsFor(i);
-      update_quality();
+      showItemsFor(i, items);
+      update_quality(items);
     }
 
     function showHeaderFor(day) {
       $('body').append('<p>-------- day ' + day + ' --------</p>');
     }
 
-    function showItemsFor(day) {
+    function showItemsFor(day, items) {
       $('body').append('<p>name, sellIn, quality</p>');
       for (var j = 0; j < items.length; j++) {
         var item = items[j];

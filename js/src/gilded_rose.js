@@ -4,9 +4,7 @@ function Item(name, sell_in, quality) {
   this.quality = quality;
 }
 
-var items = []
-
-function update_quality() {
+function update_quality(items) {
   for (var i = 0; i < items.length; i++) {
     update_item(items[i])
   }
