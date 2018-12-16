@@ -85,4 +85,28 @@ describe("Gilded Rose", function() {
     expect(items[1].quality).toEqual(50);
   });
 
+  it("should degrade Conjured quality", function() {
+    items = [ new Item("Conjured bread", 5, 15) ];
+    expect(items[0].sell_in).toEqual(5);
+    expect(items[0].quality).toEqual(15);
+    update_quality();
+    expect(items[0].sell_in).toEqual(4);
+    expect(items[0].quality).toEqual(13);
+    update_quality();
+    update_quality();
+    update_quality();
+    update_quality();
+    expect(items[0].sell_in).toEqual(0);
+    expect(items[0].quality).toEqual(5);
+    update_quality();
+    // decrease twice as fast
+    expect(items[0].sell_in).toEqual(-1);
+    expect(items[0].quality).toEqual(1);
+    update_quality();
+    update_quality();
+    expect(items[0].sell_in).toEqual(-3);
+    // not below 0
+    expect(items[0].quality).toEqual(0);
+  });
+
 });
