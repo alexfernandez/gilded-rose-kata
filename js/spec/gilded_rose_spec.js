@@ -2,8 +2,11 @@ describe("Gilded Rose", function() {
 
   it("should foo", function() {
     items = [ new Item("foo", 0, 0) ];
+    expect(items[0].name).toEqual("foo");
     update_quality();
     expect(items[0].name).toEqual("foo");
+    expect(items[0].sell_in).toEqual(-1);
+    expect(items[0].quality).toEqual(0);
   });
 
   it("should degrade regular quality", function() {
