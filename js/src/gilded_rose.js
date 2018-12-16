@@ -18,22 +18,22 @@ function update_item(item) {
   }
   item.sell_in = item.sell_in - 1;
   if (item.name == 'Aged Brie') {
-    item.quality = item.quality + 1
+    item.quality += 1
   } else if (item.name.startsWith('Backstage passes')) {
     if (item.sell_in < 0) {
       item.quality = 0
     } else if (item.sell_in < 5) {
-      item.quality = item.quality + 3
+      item.quality += 3
     } else if (item.sell_in < 10) {
-      item.quality = item.quality + 2
+      item.quality += 2
     } else {
       item.quality += 1
     }
   } else {
     if (item.sell_in < 0) {
-      item.quality = item.quality - 2
+      item.quality -= 2
     } else {
-      item.quality = item.quality - 1
+      item.quality -= 1
     }
   }
   if (item.quality > 50) {
