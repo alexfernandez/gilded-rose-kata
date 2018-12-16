@@ -14,6 +14,7 @@ function update_quality() {
 
 function update_item(item) {
   if (item.name == 'Sulfuras, Hand of Ragnaros') {
+    item.quality = 80
     return;
   }
   item.sell_in = item.sell_in - 1;
