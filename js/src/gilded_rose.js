@@ -53,3 +53,8 @@ function update_quality(items) {
   }
 }
 
+if (typeof window === 'undefined') {
+  global.Item = Item
+  global.update_quality = update_quality
+}
+
