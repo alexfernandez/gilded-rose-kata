@@ -1,3 +1,6 @@
+/*
+ * Do not touch; beware angry goblin.
+ */
 function Item(name, sell_in, quality) {
   this.name = name;
   this.sell_in = sell_in;
