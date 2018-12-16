@@ -55,8 +55,8 @@ describe("Gilded Rose", function() {
   it("should increase Backstage passes", function () {
     items = [
       new Item("Backstage passes to a TAFKAL80ETC concert", 12, 40),
-      new Item("Backstage passes to a TAFKAL80ETC concert", 7, 40),
-      new Item("Backstage passes to a TAFKAL80ETC concert", 2, 40),
+      new Item("Backstage passes to a King Crimson concert", 7, 40),
+      new Item("Backstage passes to a Wilson Simonal concert", 2, 40),
     ];
     update_quality();
     update_quality();

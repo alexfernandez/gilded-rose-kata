@@ -19,7 +19,7 @@ function update_item(item) {
   item.sell_in = item.sell_in - 1;
   if (item.name == 'Aged Brie') {
     item.quality = item.quality + 1
-  } else if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
+  } else if (item.name.startsWith('Backstage passes')) {
     if (item.sell_in < 0) {
       item.quality = 0
     } else if (item.sell_in < 5) {
